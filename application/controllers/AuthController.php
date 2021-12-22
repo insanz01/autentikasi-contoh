@@ -8,6 +8,8 @@ class AuthController extends CI_Controller {
 	}
 
 	public function login() {
+		// bagian ini untuk mengecek apakah session sudah di-set atau belum
+		// jika sudah maka akan dilempar ke route /app
 		if($this->session->has_userdata('SESS-APP-ID')) {
 			redirect('app');
 		}
