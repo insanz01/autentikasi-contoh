@@ -6,6 +6,7 @@ class AuthModel extends CI_Model {
 		$user = $this->db->get_where('users', ['username' => $data['username']])->row_array();
 	
 		if(password_verify($data['password'], $user['password'])) {
+			// melakukan set-up session
 			$this->session->set_userdata('SESS-APP-ID', $user['id']);
 
 			return TRUE;
